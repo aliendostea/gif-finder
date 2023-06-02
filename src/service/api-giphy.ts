@@ -1,4 +1,4 @@
-const API_KEY = "";
+const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
 
 interface GetApiEndpointProps {
   query: string;
