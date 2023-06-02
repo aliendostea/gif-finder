@@ -1,0 +1,157 @@
+@use "./responsive";
+@use "../abstracts/vars";
+
+:root {
+  --color-primary: #e3ae28;
+  --color-secondary: #0d1933;
+
+  --color-grey-dark-1: rgb(65, 65, 65);
+  --color-grey-dark-2: rgb(34, 34, 34);
+
+  --color-grey-dark-overlay: rgba(0, 0, 0, 0.7);
+
+  --color-green: #2ecc71;
+  --color-red: #f24e43;
+
+  --font-primary: "Montserrat", sans-serif;
+  --font-primary-secundary: "Roboto", sans-serif;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+
+  --border-radius: 8px;
+
+  --grid-column-full-start-end: full-start / full-end;
+  --grid-column-center-start-end: center-start / center-end;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: var(--font-primary);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @media only screen and (min-width: 2200px) {
+    font-size: 113.5%;
+  }
+  @include responsive.respond(tab-between-port-land) {
+    font-size: 52%;
+  }
+  @include responsive.respond(tab-port) {
+    font-size: 48%;
+  }
+  @include responsive.respond(big-desktop) {
+    font-size: 68%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: vars.$font-primary;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.33px;
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: rgb(248, 248, 248);
+  color: var(--color-grey-dark-1);
+}
+
+a {
+  &,
+  &:link,
+  &:visited {
+    font-family: vars.$font-primary;
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    background-color: transparent;
+
+    a:active {
+      color: inherit;
+      text-decoration: none;
+      outline: none;
+      background-color: transparent;
+    }
+  }
+}
+
+nav ul {
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-primary);
+  width: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: hsla(0, 0%, 0%, 0);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+p {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+button {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #31260c;
+  padding: 17px 9px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--color-primary);
+  transition: 0.3s ease-in-out;
+  outline: none;
+  cursor: pointer;
+}
+
+span {
+  color: inherit;
+}
+
+::selection {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}

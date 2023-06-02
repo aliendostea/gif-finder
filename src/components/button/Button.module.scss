@@ -1,0 +1,32 @@
+.btn {
+  width: 33rem;
+  justify-self: center;
+
+  &:hover {
+    transform: translateY(-2px);
+    background-color: #c89c2c;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    background-color: #c89c2c;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: #c89c2c;
+    cursor: not-allowed;
+
+    &:hover {
+      transform: translateY(0);
+    }
+  }
+
+  &.btn-light {
+    background-color: #c89c2c1c;
+    color: #d7ccb1;
+  }
+}

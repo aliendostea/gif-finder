@@ -1,0 +1,44 @@
+@use "../base/responsive";
+
+@mixin grid-template-columns-all-full-start-end {
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      10,
+      [col-start] minmax(min-content, 13rem) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
+
+  @include responsive.respond(tab-between-port-land) {
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr) [center-start] repeat(
+        10,
+        [col-start] minmax(min-content, 13rem) [col-end]
+      )
+      [center-end] minmax(6rem, 1fr) [full-end];
+  }
+  @include responsive.respond(tab-port) {
+    grid-template-columns:
+      [full-start] minmax(2rem, 1fr) [center-start] repeat(
+        4,
+        [col-start] minmax(min-content, 20rem) [col-end]
+      )
+      [center-end] minmax(2rem, 1fr) [full-end];
+  }
+  @include responsive.respond(phone) {
+    grid-template-columns:
+      [full-start] minmax(2rem, 1fr) [center-start] repeat(
+        6,
+        [col-start] minmax(4rem, 14rem) [col-end]
+      )
+      [center-end] minmax(2rem, 1fr) [full-end];
+  }
+}
+
+.main-container {
+  display: grid;
+  @include grid-template-columns-all-full-start-end;
+  gap: 10px 0;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+}

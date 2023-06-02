@@ -1,0 +1,103 @@
+.card {
+  height: 21.7rem;
+  display: grid;
+  justify-content: stretch;
+  align-content: center;
+  align-items: stretch;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  position: relative;
+  background-color: rgb(223, 223, 223);
+  transition: 0.2s all ease-in-out;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0px 12px 22px hsla(0, 0%, 0%, 0.322);
+  }
+
+  & > figure {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  & video {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &:hover .span-bg {
+    opacity: 0.7;
+  }
+
+  &:hover .btn {
+    animation: on-hover-translate-y 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+  }
+}
+
+.btn {
+  width: 10rem;
+  height: 2rem;
+  display: grid;
+  align-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: 14px 0;
+  transform: translateY(50px) translateX(-50%);
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  z-index: 2;
+
+  &:hover {
+    background-color: #c89c2c;
+  }
+}
+
+.span-bg {
+  width: 100%;
+  height: 9rem;
+  display: block;
+  background: rgba(0, 0, 0, 0.205);
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(30%, rgba(0, 0, 0, 0.77)),
+    color-stop(58%, rgba(0, 0, 0, 0.51)),
+    color-stop(86%, rgba(0, 0, 0, 0))
+  );
+  background: -o-linear-gradient(
+    bottom,
+    rgba(0, 0, 0, 0.77) 30%,
+    rgba(0, 0, 0, 0.51) 58%,
+    rgba(0, 0, 0, 0) 86%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.77) 30%,
+    rgba(0, 0, 0, 0.51) 58%,
+    rgba(0, 0, 0, 0) 86%
+  );
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+@keyframes on-hover-translate-y {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px) translateX(-50%);
+    transform: translateY(50px) translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(-10px) translateX(-50%);
+    transform: translateY(-10px) translateX(-50%);
+  }
+}

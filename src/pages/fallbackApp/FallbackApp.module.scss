@@ -1,0 +1,40 @@
+@use "../../styles/sass/abstracts/vars";
+
+.container {
+  grid-column: vars.$grid-column-center-start-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 21.7rem));
+  grid-template-rows: repeat(auto-fit, minmax(150px, 21.7rem));
+  justify-content: center;
+  gap: 2rem;
+}
+
+.container-intro {
+  grid-column: vars.$grid-column-center-start-end;
+  grid-row: 1 / 2;
+  height: 20rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 5;
+
+  &__span {
+    grid-column: vars.$grid-column-full-start-end;
+    grid-row: 1 / 2;
+    display: block;
+    background-color: #0d1933;
+    z-index: 0;
+    transform: scaleY(1.4);
+  }
+}
+
+.container-random {
+  grid-column: vars.$grid-column-center-start-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 21.7rem));
+  grid-template-rows: repeat(auto-fit, minmax(150px, 21.7rem));
+  justify-content: center;
+  gap: 3rem;
+  padding-top: 3rem;
+}
