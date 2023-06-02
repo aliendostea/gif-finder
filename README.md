@@ -16,6 +16,20 @@ $ yarn build
 $ yarn lint
 ```
 
+## What are the project routes? 📋
+
+```bash
+# Route home
+https://gif-finder-sable.vercel.app
+
+# Route home with param
+https://gif-finder-sable.vercel.app/search/cats
+
+# Route not found
+https://gif-finder-sable.vercel.app/search
+
+```
+
 ## Features 📋
 
 ⚡️ -. Hooks.

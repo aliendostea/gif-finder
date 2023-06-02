@@ -1,17 +1,8 @@
-import React, { useEffect } from "react";
-import { Route, Routes, useParams } from "react-router-dom";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import { PageNotFound } from "./pages/pageNotFound";
 import { Home } from "./pages/home";
-
-const Details = () => {
-  const urlParam = useParams();
-
-  useEffect(() => {
-    console.log("urlParam Details", urlParam);
-  }, []);
-
-  return <div>Details</div>;
-};
+import { Details } from "./pages/Details";
 
 const App = () => {
   return (
