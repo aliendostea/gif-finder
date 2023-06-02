@@ -1,3 +1,5 @@
+@use "../../styles/sass/base/responsive";
+
 $input-font-size: 1.6rem;
 $input-letter-spacing: 0.31px;
 $input-placeholder-font-weight: 300;
@@ -72,6 +74,22 @@ $color-1: gray;
     padding: 12px 16px;
     position: absolute;
     right: 6px;
-    top: 4px;
+    top: 0.8rem;
+
+    @include responsive.respond(tab-between-land-desktop) {
+      top: 0.65rem;
+    }
+    @include responsive.respond(between-pc-and-tab-port) {
+      top: 0.6rem;
+    }
+
+    @include responsive.respond(tab-port) {
+      padding: 1.2rem 1.6rem;
+      top: 0.8rem;
+    }
+
+    @include responsive.respond(big-desktop) {
+      top: 9px;
+    }
   }
 }
